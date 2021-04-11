@@ -19,7 +19,7 @@
         <a href="index.jsp">INDEX</a> |
         <a href="disciplinas.jsp">DISCIPLINAS CURSADAS</a>
     </form>
-<%else{%>
+<%}else{%>
 
     <form style="margin: 50px">
         Usuário: <input type="text" name="nomeUsuario">
