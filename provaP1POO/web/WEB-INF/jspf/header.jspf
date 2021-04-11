@@ -13,14 +13,14 @@
 %>
 
 <%if(session.getAttribute("nomeUsuario") != null){%>
-    <form>
+    <form style="margin: 50px">
         Bem-vindo, <%=session.getAttribute("nomeUsuario")%>
         <input type="submit" value="Sair" name="sairSessao"> |
         <a href="index.jsp">INDEX</a> |
         <a href="disciplinas.jsp">DISCIPLINAS CURSADAS</a>
     </form>
  <%}else{%>
-    <form>
+    <form style="margin: 50px">
         Usuário: <input type="text" name="nomeUsuario"><br>
         <input type="submit" value="Entrar" name="entrarSessao">
     </form>
