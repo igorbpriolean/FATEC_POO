@@ -13,7 +13,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <div class="text-left" style="margin-left: 50px; margin-right: 50px">           
+        <div class="text-left">           
             <p>IGOR BATISTA PRIOLEAN</p>
             <p>RM: 1290481912040</p>
             <p>Ingresso na Fatec: 1º Semestre de 2019</p>

@@ -49,6 +49,27 @@ public class User {
         return list;
     }
     
+    public static User getUser(String login, String pass) throws Exception{
+        User user = null;
+        Connection con = DbListener.getConnection();
+        String sql = "SELECT * from users WHERE login=? and password_hash =?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, login);
+        stmt.setLong(2, pass.hashCode());
+        ResultSet rs = stmt.executeQuery();
+        while(rs.next()){
+            user = new User(
+            rs.getString("name"),
+            rs.getString("login"),
+            rs.getString("role")
+            );
+        }
+        rs.close();
+        stmt.close();
+        con.close();
+        return user;
+    }
+    
     public static ArrayList<User> getDisciplinas() throws Exception{
         ArrayList<User> list = new ArrayList<>();
         Connection con = DbListener.getConnection();

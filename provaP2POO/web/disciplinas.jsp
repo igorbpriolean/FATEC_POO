@@ -52,7 +52,7 @@
         <br><div>Página restrita a usuários logados</div>
         <%}else{%>
         <br><br>
-        <table>
+        <table class="table table-bordered" style="width: auto;height: auto; margin: 50px; text-align: center">
             <tr>
                 <th>Nome</th>
                 <th>Dia da semana</th>
