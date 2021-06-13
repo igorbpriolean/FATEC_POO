@@ -68,8 +68,29 @@ public class User {
         return list;
     }    
     
+    public static void addDisciplina(String nome, String diasemana, String horario, String qtdaulas) throws Exception{
+        Connection con = DbListener.getConnection();
+        String sql = "INSERT INTO disciplinas(nome, diasemana, horario, qtdaulas)"
+                + "VALUES(?, ?, ?, ?)";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, nome);
+        stmt.setString(2, diasemana);
+        stmt.setString(3, horario);
+        stmt.setString(4, qtdaulas);
+        stmt.execute();
+        stmt.close();
+        con.close();
+    }
     
-    
+    public static void removeDisciplina(String nome) throws Exception{
+        Connection con = DbListener.getConnection();
+        String sql = "DELETE FROM disciplinas WHERE nome = ?";
+        PreparedStatement stmt = con.prepareStatement(sql);
+        stmt.setString(1, nome);
+        stmt.execute();
+        stmt.close();
+        con.close();
+    }
     
     public String getName() {
         return name;
