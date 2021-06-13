@@ -1,2 +1,19 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<h5>IGOR BATISTA PRIOLEAN</h5>
+
+<form method="post">
+    Usuário: <input type="text" name="user.login"/>
+    Password: <input type="password" name="user.password"/>
+    <input type="submit" name="session.login" value="Entrar"/>
+</form>
+
+<form method="post">
+        BEM-VINDO, <%= session.getAttribute("user.name")%>
+        <input type="submit" name="session.logout" value="Sair"> |
+        <a href="index.jsp">INDEX</a> |
+        <a href="disciplinas.jsp">DISCIPLINAS</a>
+</form>
+<hr/>
